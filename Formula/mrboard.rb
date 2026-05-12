@@ -5,21 +5,21 @@
 class Mrboard < Formula
   desc "GitLab MR review board for daily standups"
   homepage "https://github.com/ceffo/mrboard"
-  version "0.0.6"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.0.6/mrboard_0.0.6_darwin_amd64.tar.gz"
-      sha256 "57ffb82c15065c19b52e2bd0ef5b4d81e73aae563805446d2190c78abe290f28"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.1.0/mrboard_0.1.0_darwin_amd64.tar.gz"
+      sha256 "b8c66cf43f3956b69f15a074f19320cf639820f4ff3f0d6d6e2659bc7e6f5a39"
 
       define_method(:install) do
         bin.install "mrboard"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.0.6/mrboard_0.0.6_darwin_arm64.tar.gz"
-      sha256 "f70f3b6a57d6107854712f0ca01ed053e06683b427769188411c954fba5cecab"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.1.0/mrboard_0.1.0_darwin_arm64.tar.gz"
+      sha256 "6c2256c7283215d463766cb8375a6a722d210f1007e449b3adfc2eed7456d61f"
 
       define_method(:install) do
         bin.install "mrboard"
@@ -29,15 +29,15 @@ class Mrboard < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.0.6/mrboard_0.0.6_linux_amd64.tar.gz"
-      sha256 "86105b35ccb0289eba25ace15c5f4c6dd904f627e471ee55d54cc79b71284b60"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.1.0/mrboard_0.1.0_linux_amd64.tar.gz"
+      sha256 "cca9d78a76b4d1aba1daed8fb02d78fe95e8cc5448d5822cb11716b1c213c2b9"
       define_method(:install) do
         bin.install "mrboard"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.0.6/mrboard_0.0.6_linux_arm64.tar.gz"
-      sha256 "2d61905e600633139fc9ecdc6574f7065af161ca3e5cfb1f32dae34407df746b"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.1.0/mrboard_0.1.0_linux_arm64.tar.gz"
+      sha256 "77ba28a3d0a9682e37cdefc348dd5c6ea6d76659f25acaaef0a10c2e22006d27"
       define_method(:install) do
         bin.install "mrboard"
       end
