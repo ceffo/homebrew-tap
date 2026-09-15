@@ -5,27 +5,35 @@
 class Mrboard < Formula
   desc "GitLab MR review board for daily standups"
   homepage "https://github.com/ceffo/mrboard"
-  version "0.17.0"
+  version "0.17.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.17.0/mrboard_0.17.0_darwin_amd64.tar.gz"
-      sha256 "c13be9eeba99a122ec93b0443d68edbeac7bd7be4c1dfa5c47e7494217a5b971"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.17.1/mrboard_0.17.1_darwin_amd64.tar.gz"
+      sha256 "b11621630335ebe55d862170ab22d72a357172871226507ddbd38af63ec23613"
 
       define_method(:install) do
         bin.install "mrboard"
-        generate_completions_from_executable(bin/"mrboard", "completion",
+        # shell_parameter_format: :cobra already appends `completion <shell>` to the
+        # invocation. Do not pass "completion" as an explicit command arg here — that
+        # duplicates it, invoking `mrboard completion completion <shell>` and printing
+        # cobra's help text instead of a real completion script (regressed twice: #1).
+        generate_completions_from_executable(bin/"mrboard",
                                               shell_parameter_format: :cobra,
                                               shells: [:bash, :zsh, :fish])
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.17.0/mrboard_0.17.0_darwin_arm64.tar.gz"
-      sha256 "1a4d7b65ce94b2f4f1fcd2858e7fb51fd35f09b200eabb62bac522b5e3b8680d"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.17.1/mrboard_0.17.1_darwin_arm64.tar.gz"
+      sha256 "99d7c579c3b491e338caaf640786b0b69a523f3fa201d50143f48d943a28b90b"
 
       define_method(:install) do
         bin.install "mrboard"
-        generate_completions_from_executable(bin/"mrboard", "completion",
+        # shell_parameter_format: :cobra already appends `completion <shell>` to the
+        # invocation. Do not pass "completion" as an explicit command arg here — that
+        # duplicates it, invoking `mrboard completion completion <shell>` and printing
+        # cobra's help text instead of a real completion script (regressed twice: #1).
+        generate_completions_from_executable(bin/"mrboard",
                                               shell_parameter_format: :cobra,
                                               shells: [:bash, :zsh, :fish])
       end
@@ -34,21 +42,29 @@ class Mrboard < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.17.0/mrboard_0.17.0_linux_amd64.tar.gz"
-      sha256 "69fa2f8ca9156823546cea13a0721f2d5bd1c3ed5a15d713eb1e242f191c31c9"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.17.1/mrboard_0.17.1_linux_amd64.tar.gz"
+      sha256 "793fef43def5be8e8bb9be2fb5f0b600cacf2c2f2cf272041c4ceec7d00eb902"
       define_method(:install) do
         bin.install "mrboard"
-        generate_completions_from_executable(bin/"mrboard", "completion",
+        # shell_parameter_format: :cobra already appends `completion <shell>` to the
+        # invocation. Do not pass "completion" as an explicit command arg here — that
+        # duplicates it, invoking `mrboard completion completion <shell>` and printing
+        # cobra's help text instead of a real completion script (regressed twice: #1).
+        generate_completions_from_executable(bin/"mrboard",
                                               shell_parameter_format: :cobra,
                                               shells: [:bash, :zsh, :fish])
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.17.0/mrboard_0.17.0_linux_arm64.tar.gz"
-      sha256 "ad2718aaff6cf8e9fccc0ad426bff17bbf9db110ab7a00820311bbfd558a4997"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.17.1/mrboard_0.17.1_linux_arm64.tar.gz"
+      sha256 "08856eff8934635631b38ae4817c932f6a0a4c8010af92c86f583786901f6767"
       define_method(:install) do
         bin.install "mrboard"
-        generate_completions_from_executable(bin/"mrboard", "completion",
+        # shell_parameter_format: :cobra already appends `completion <shell>` to the
+        # invocation. Do not pass "completion" as an explicit command arg here — that
+        # duplicates it, invoking `mrboard completion completion <shell>` and printing
+        # cobra's help text instead of a real completion script (regressed twice: #1).
+        generate_completions_from_executable(bin/"mrboard",
                                               shell_parameter_format: :cobra,
                                               shells: [:bash, :zsh, :fish])
       end
