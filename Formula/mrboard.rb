@@ -5,12 +5,12 @@
 class Mrboard < Formula
   desc "GitLab MR review board for daily standups"
   homepage "https://github.com/ceffo/mrboard"
-  version "0.22.4"
+  version "0.22.5"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.22.4/mrboard_0.22.4_darwin_amd64.tar.gz"
-      sha256 "e6b768610a735e9c88be93eee2e29ba0f5f2aeab858766415d96327300d8d96d"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.22.5/mrboard_0.22.5_darwin_amd64.tar.gz"
+      sha256 "6f102e9cc725823bd52dd95251b121f9a638fd606395be642d00acc852d250ce"
 
       define_method(:install) do
         bin.install "mrboard"
@@ -24,8 +24,8 @@ class Mrboard < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.22.4/mrboard_0.22.4_darwin_arm64.tar.gz"
-      sha256 "b3934a8847c01fd5da05ada12f156428322626768b8cf7718b248f99477a52ab"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.22.5/mrboard_0.22.5_darwin_arm64.tar.gz"
+      sha256 "fc29299acc42e2cbaac429cbd0b1f823c06f9fd652da2f64b3e9131a3a7a8a2a"
 
       define_method(:install) do
         bin.install "mrboard"
@@ -42,8 +42,8 @@ class Mrboard < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.22.4/mrboard_0.22.4_linux_amd64.tar.gz"
-      sha256 "c5ed7e64e6792cc47722ab35ba9fb2c880bffe331fb082b7af80f6605bc5cbf5"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.22.5/mrboard_0.22.5_linux_amd64.tar.gz"
+      sha256 "c18b5c4537dc0a9aacbf50d04a9248836ef0efa5a4e96ae71a5131794e5edd0c"
       define_method(:install) do
         bin.install "mrboard"
         # shell_parameter_format: :cobra already appends `completion <shell>` to the
@@ -56,8 +56,8 @@ class Mrboard < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ceffo/mrboard/releases/download/v0.22.4/mrboard_0.22.4_linux_arm64.tar.gz"
-      sha256 "3d27c2ebfdae14127a3e8b0fe5d95e0b1f67735a2e920c650086cc48e0203395"
+      url "https://github.com/ceffo/mrboard/releases/download/v0.22.5/mrboard_0.22.5_linux_arm64.tar.gz"
+      sha256 "e316cc07cbdcbb8587c4e8c56b867637b7b75a3ff2e676c5720c22e898ceb8a8"
       define_method(:install) do
         bin.install "mrboard"
         # shell_parameter_format: :cobra already appends `completion <shell>` to the
