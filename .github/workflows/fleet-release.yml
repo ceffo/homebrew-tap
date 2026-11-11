@@ -1,9 +1,13 @@
 # Installed into ceffo/homebrew-tap as .github/workflows/fleet-release.yml by tools/release-ci-setup.sh (source of truth: this file, #355).
 # Publishes the fleet binary release (fleet-v<VERSION> and Formula/fleet.rb) from the private agents-dev-fleet repo. Runs in the tap so its
 # own GITHUB_TOKEN (contents: write on the tap only) is the credential: no personal token. The source is read with a read-only deploy key.
-# A run for a version that is already published is a no-op. Instant publish after a VERSION merge: gh workflow run fleet-release.yml --repo ceffo/homebrew-tap
+# A run for a version that is already published is a no-op. Started by the tag fleet-build-v* that the private repo's fleet-release-trigger
+# workflow pushes with a write deploy key on this repo (#372: a push by that key, unlike one by a GITHUB_TOKEN, starts a run); the schedule is a safety net.
 name: fleet-release
 on:
+  push:
+    tags:
+      - "fleet-build-v*"
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
