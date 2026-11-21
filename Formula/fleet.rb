@@ -1,27 +1,27 @@
 class Fleet < Formula
   desc "Agent fleet tooling (prebuilt binary)"
   homepage "https://github.com/ceffo/agents-dev-fleet"
-  version "0.2.359"
+  version "0.2.360"
 
   on_macos do
     on_arm do
-      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.359/fleet-darwin-arm64"
-      sha256 "ceb76606f29d9b0b629fc242d5219e63c04e9aef96fc21f1db18e14ce84827cd"
+      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.360/fleet-darwin-arm64"
+      sha256 "de8d6a85ef512616a8114b19d6d72a69a26beb25af55aa69b9cc8b5664a12c02"
     end
     on_intel do
-      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.359/fleet-darwin-amd64"
-      sha256 "19207341e152d8e1b949f08f231eab351a42c9c8928ba1d0c1aa7ee18794478a"
+      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.360/fleet-darwin-amd64"
+      sha256 "d9c538186e4ea8b0f41f5672172e7fcd3e6fc9f3b5a216641dd41d5b536e6138"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.359/fleet-linux-arm64"
-      sha256 "efebc10d512a90c5f7be209ae6ececfd706594cc04b1bd28bd5718bcd3bde764"
+      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.360/fleet-linux-arm64"
+      sha256 "35fe64bc8ffd9c7cbca4d3153fa600c41871ffa72ff614604d221889c08d3442"
     end
     on_intel do
-      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.359/fleet-linux-amd64"
-      sha256 "b375532aca52c273751eb172303f95bdbc2985bbfe11c44d5ae931fdf704d372"
+      url "https://github.com/ceffo/homebrew-tap/releases/download/fleet-v0.2.360/fleet-linux-amd64"
+      sha256 "bd67f7e62fc8cf5d1d0756c979a93fb0b79d6dc4e0b60242387f5f9f543052a4"
     end
   end
 
